@@ -10,30 +10,23 @@ import javax.validation.constraints.Email;
 
 @Entity
 public class User {
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String secretKey;
     private String username;
     private String password;
     private String email;
     private String name;
     private String lastname;
     private String cpf;
-
-    public long getId() {
-        return id;
-    }
-    public void setId(long id) {
-        this.id = id;
-    }
-    public String getSecretKey() {
-        return secretKey;
-    }
-
-    public void setSecretKey(String secretKey) {
-        this.secretKey = secretKey;
-    }
 
     public String getUsername() {
         return username;
