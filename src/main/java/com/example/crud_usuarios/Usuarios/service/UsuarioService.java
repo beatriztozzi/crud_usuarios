@@ -4,7 +4,7 @@ import com.example.crud_usuarios.Usuarios.model.User;
 import com.example.crud_usuarios.Usuarios.repository.UsuarioRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.example.crud_usuarios.mfa.multiFactor;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,7 +22,8 @@ public class UsuarioService {
     }
 
     public User addUsuario(User usuario) {
-        return usuarioRepositorio.save(usuario);
+        usuarioRepositorio.save(usuario);
+        return usuario;
     }
 
     public void deleteUsuario(Long id) {
@@ -54,6 +55,10 @@ public class UsuarioService {
         } catch (Exception e) {
             throw e;
         }
+    }
+
+    public User getUsuarioByEmail(String email) {
+        return usuarioRepositorio.findByEmail(email);
     }
 }
 

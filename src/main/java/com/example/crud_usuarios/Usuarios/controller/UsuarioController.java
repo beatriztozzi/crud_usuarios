@@ -36,4 +36,8 @@ public class UsuarioController {
     public User getUsuario(@PathVariable int id){
         return service.getUsuario((long) id);
     }
+
+    public User getUsuarioByEmail(String email){
+        return service.getUsuarioByEmail(email);
+    }
 }
